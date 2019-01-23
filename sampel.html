@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/v14/favicon.ico">
+
+    <title>Palawa.UGM :: Universitas Gadjah Mada</title>
+
+
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/bootstrap/css/bootstrap-3.1.1.min.css" />
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/bootstrap/css/bootstrap-theme-3.1.1.min.css" />
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/bootstrap/css/dropdowns-enhancement.css" />
+
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/fontawesome/css/font-awesome-4.2.0.min.css" />
+    
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/ugm/font/source-code-pro.css" />
+
+    
+    <link rel="stylesheet" href="/v14/themes/webugm/assets/ugm/css/theme.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row visible-print">
+        <div class="col-md-12">
+          <p>
+            <strong>Universitas Gadjah Mada</strong>
+            <span class="pull-right"><strong>Palawa.UGM</strong></span>
+          </p>
+          <p>
+            <strong>Fakultas MIPA</strong>
+            <span class="pull-right"><strong>[UGM-ACD.2014.IRS.001-r0]</strong></span>
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/v14/themes/webugm/assets/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="/v14/themes/webugm/assets/jquery/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="/v14/themes/webugm/assets/bootstrap/js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/v14/themes/webugm/assets/bootstrap/js/holder.js"></script>
+    <script type="text/javascript" src="/v14/themes/webugm/assets/bootstrap/js/dropdowns-enhancement.js"></script>
+
+      <script type="text/javascript" src="/v14/themes/webugm/assets/jquery/table-fixed-header.js"></script>
+    
+    <script type="text/javascript" src="/v14/themes/webugm/assets/highcharts/js/highcharts.js"></script>
+    <script type="text/javascript" src="/v14/themes/webugm/assets/faviconjs/favico-0.3.10.min.js"></script>
+  
+    <script type="text/javascript">
+  $(document).ready(function(){
+    $('.clock').countdown('2019-01-24 04:41:23').on('update.countdown', function(event) {
+      var $this = $(this).html(event.strftime('%M:%S'));
+    });
+    $('.clock').countdown('2019-01-24 04:41:23').on('finish.countdown', function(event) {
+      //window.location = "/v14/"
+    });
+  })
+</script>
+
+<div id="navtop" class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navmain">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs" href="#">Palawa.UGM <span class="clock"></span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="nav navbar-nav navbar-left">
+              <li><a href="http://ugm.ac.id/">UGM</a></li>
+        <li><a href="http://ugmail.ugm.ac.id/">Mail</a></li>
+        <li><a href="http://lib.ugm.ac.id/">Perpustakaan</a></li>
+              <!--li><a href="#">Link</a></li-->
+            </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+              <li class="text text-danger hidden-xs">
+          <a title="demi keamanan, sistem akan otomatis logout jika tidak ada aktifitas dalam waktu yang ditentukan" class="clock" href="#">00:00</a>
+          </li>
+      
+        
+        
+        <li><a href="/v14/index.php/system/faq/"><i class="fa fa-question-circle"></i> FAQ</a></li>
+
+                      <li><a href="/v14/index.php/system/feedback/"><i class="fa fa-mail-forward"></i> Feedback</a></li>
+
+
+              <li><a href="/v14/index.php/forum/"><i class="fa fa-comments-o"></i> Forum <span class="badge badge-error"></span></a></li>
+            
+        <li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">
+            <i class="fa fa-user"></i> STANLEY HERYANTO <i class="caret"></i>
+          </a>
+          <ul class="dropdown-menu">
+              <li><a href="/v14/index.php/personal/user/change_password">Ubah Password</a></li>
+              <li><a href="/v14/index.php/system/auth/logout">Logout</a></li>
+          </ul>
+        </li>
+            </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</div><!-- #navtop -->    <div id="header" class="hidden-print">
+  <div class="container">
+    <div class="row hidden-xs">
+      <div class="col-md-6 header-left">
+        <div class="logougm"></div>
+        <h2>Palawa.UGM</h2>
+        <h3>Portal Akademik Mahasiswa dan Dosen</h3>
+      </div>
+      <div class="col-md-6 header-right hidden-sm">
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="row navmain navbar-inverse">
+      <div id="navmain" class="col-md-12 navmain-left collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+        
+          
+<li><a href="/v14/index.php/"><i class="fa fa-home"></i> Home </a></li>
+<li><a href="/v14/index.php/personal/profile/"><i class="fa fa-user"></i> Profil </a></li>
+<li><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/"><i class="fa fa-check-square-o"></i> Akademik <i class="caret"></i></a>
+<ul class="dropdown-menu">
+<li class="dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/"> Mahasiswa </a>
+<ul class="dropdown-menu">
+<li><a href="/v14/index.php/akademik/mahasiswa/ringkasan/"> Ringkasan </a></li>
+<li><a href="/v14/index.php/registrasi/riwayat/"> Riwayat Registrasi </a></li>
+<li class="divider"></li></li>
+<li><a href="/v14/index.php/akademik/mahasiswa/rencana_studi/"> Isian Rencana Studi (IRS/KRS) </a></li>
+<li class="divider"></li></li>
+<li><a href="/v14/index.php/akademik/mahasiswa/hasil_studi/"> Hasil Studi </a></li>
+<li><a href="/v14/index.php/akademik/mahasiswa/rekap_nilai/"> Rekap Nilai </a></li>
+<li><a href="/v14/index.php/akademik/mahasiswa/riwayat_nilai/"> Riwayat Nilai </a></li>
+<li class="divider"></li></li>
+<li><a href="/v14/index.php/akademik/mahasiswa/tugas_akhir_studi/"> Tugas Akhir Studi </a></li></li>
+</ul>
+<li><a href="/v14/index.php/akademik/mahasiswa/bimbingan_akademik/"> Bimbingan Akademik </a></li>
+<li class="dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/"> Evaluasi Dosen oleh Mahasiswa (EDoM) </a>
+<ul class="dropdown-menu">
+<li><a href="/v14/index.php/edom/kelas/"> Dosen Pengampu Mata Kuliah </a></li>
+<li><a href="/v14/index.php/edom/dpa/"> Dosen Pembimbing Akademik </a></li>
+<li><a href="/v14/index.php/edom/dta/"> Dosen Pembimbing Tugas Akhir Studi </a></li></li>
+</ul>
+<li class="divider"></li></li>
+<li class="dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/"> Mata Kuliah </a>
+<ul class="dropdown-menu">
+<li><a href="/v14/index.php/akademik/matakuliah/matakuliah_ditawarkan/"> Mata Kuliah Ditawarkan </a></li></li>
+</ul>
+</ul>
+<li><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/kemahasiswaan/beasiswa/personal/"><i class="fa fa-users"></i> Kemahasiswaan <i class="caret"></i></a>
+<ul class="dropdown-menu">
+<li><a href="/v14/index.php/kemahasiswaan/beasiswa/personal/"> Beasiswa </a></li>
+<li class="divider"></li></li>
+<li><a href="/v14/index.php/kemahasiswaan/ppsmb/"> PPSMB </a></li>
+<li><a href="/v14/index.php/kemahasiswaan/pkm/"> Kegiatan Mahasiswa </a></li>
+<li><a href="/v14/index.php/kemahasiswaan/lowongan/"> Lowongan Kerja </a></li></li>
+</ul>
+<li><a class="dropdown-toggle" data-toggle="dropdown" href="/v14/index.php/pustaka/riwayat/"><i class="fa fa-book"></i> Pustaka <i class="caret"></i></a>
+<ul class="dropdown-menu">
+<li><a href="/v14/index.php/pustaka/riwayat/"> Riwayat Peminjaman </a></li>
+<li><a href="/v14/index.php/pustaka/pencarian/"> Pencarian Pustaka </a>
+                  </ul>
+      </div>
+    </div>
+  </div>
+</div> <!-- #header -->
+    <div id="content">
+      <div class="container">
+
+        <div class="row hidden-print">
+          <ol class="breadcrumb">
+            <li><a href="/v14/index.php"><i class="fa fa-home"></i> Home</a></li>
+                                          <li><a href="/v14/index.php/akademik/mahasiswa/ringkasan/">Akademik</a></li>
+                                              <li><a href="/v14/index.php/akademik/mahasiswa/ringkasan/">Mahasiswa</a></li>
+                                              <li class="active">Rencana Studi</li>
+                                        </ol>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+		        <div class="visible-print col-md-12 text-center">
+	<p><strong>RENCANA STUDI</strong></p>
+</div>
+
+<div class="row hidden-print">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-file-o"></i> <strong>Rencana Studi</strong>
+			</div>
+			<div class="panel-body">
+				<div class="alert alert-info hidden-print">
+					<p>
+						<strong><i class="fa fa-info-circle"></i> INFORMASI</strong> <br />
+						Persetujuan Isian Rencana Studi (IRS/KRS) dilakukan oleh <strong>Dosen Pembimbing Akademik (PA)</strong>.<br />
+						<br />
+						Matakuliah yang sudah disetujui DPA tidak dapat dibatalkan. <br />
+						Untuk membatalkan matakuliah yang sudah disetujui DPA, silakan hubungi DPA untuk membatalkan persetujuan KRS.
+					</p>
+				</div>
+				<div class="alert alert-info hidden-print">
+					<p>
+						Pastikan IRS Saudara <strong>sudah disetujui</strong> DPA. <br />
+						Cetak IRS, Cetak Kartu UTS dan Cetak Kartu UAS hanya untuk IRS yang sudah disetujui.
+					</p>
+				</div>
+
+									<div id="msg" class="alert alert-danger fade in">
+						
+				<strong><i class="fa fa-exclamation-triangle"></i> PERHATIAN</strong> <br />
+				Bukan periode KRS atau Revisi. Silakan hubungi Operator SIAkademik Fakultas/Sekolah/Departemen untuk informasi lebih rinci.
+									</div>
+				
+				<div class="hidden-print">
+					<a class="btn btn-sm btn-info" href="/v14/index.php/akademik/mahasiswa/bimbingan_akademik/">
+						<i class="fa fa-comments"></i> Bimbingan akademik
+					</a>
+
+				
+					<a href="/v14/index.php/akademik/mahasiswa/rencana_studi/cetak_irs/" class="btn btn-sm btn-warning"><i class="fa fa-print"></i> Cetak IRS</a>
+					<a href="/v14/index.php/akademik/mahasiswa/rencana_studi/cetak_uts/" class="btn btn-sm btn-warning"><i class="fa fa-print"></i> Cetak Kartu UTS</a>
+					<a href="/v14/index.php/akademik/mahasiswa/rencana_studi/cetak_uas/" class="btn btn-sm btn-warning"><i class="fa fa-print"></i> Cetak Kartu UAS</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row visible-print">
+	<div class="col-md-12">
+		<table class="table table-striped table-condensed">
+			<tbody>
+				<tr>
+					<td class="col-md-2 col-xs-2 text-right"><strong>NIM</strong></td>
+					<td class="col-md-4 col-xs-4">18/427596/PA/18556</td>
+					<td class="col-md-1">&nbsp;</td>
+					<td class="col-md-1 col-xs-1 text-right"><strong>PRODI</strong></td>
+					<td class="col-md-4 col-xs-4">ILMU KOMPUTER</td>
+				</tr>
+				<tr>
+					<td class="col-md-2 col-xs-2 text-right"><strong>NAMA</strong></td>
+					<td class="col-md-4 col-xs-4">STANLEY HERYANTO</td>
+					<td class="col-md-1">&nbsp;</td>
+					<td class="col-md-1 col-xs-1 text-right"><strong>SEMESTER</strong></td>
+					<td class="col-md-4 col-xs-4">GASAL 2018/2019</td>
+				</tr>
+				<tr>
+					<td class="col-md-2 col-xs-2 text-right"><strong>DOSEN PA</strong></td>
+					<td class="col-md-4 col-xs-4">MOH. EDI WIBOWO, PH.D.</td>
+					<td class="col-md-1">&nbsp;</td>
+					<td class="col-md-1 col-xs-1 text-right">&nbsp;</td>
+					<td class="col-md-4 col-xs-4">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+		<form role="form" class="form-inline" method="post">
+			<fieldset>
+				<div class="table-responsive">
+					<table class="table table-striped table-condensed">
+						<thead>
+							<tr>
+								<th class="">KETERANGAN</th>
+								<th class="text-right">NO</th>
+								<th>&nbsp;</th>
+								<th class="col-md-5">MATA KULIAH / KELAS</th>
+								<th class="col-md-1 text-center">SKS</th>
+								<th class="col-md-4">JADWAL</th>
+							</tr>
+							<tr>
+								<th>(1)</th>
+								<th class="text-right">(2)</th>
+								<th>&nbsp;</th>
+								<th>(3)</th>
+								<th class="text-center">(4)</th>
+								<th>(5)</th>
+							</tr>
+						</thead>
+												<tbody>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">1</td>
+								<td>
+																	</td>
+								<td>
+									MFF1011 FISIKA DASAR I <br />
+									<em>(KELAS MFF1011-6)</em> <br />
+
+																		<em>code: fb7c-af59-16d6-caf5</em>
+									</td>
+								<td class="text-center">3</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Senin, 07:30-09:10 (S1.201) <br />																					&nbsp;&nbsp;&nbsp; Selasa, 09:30-10:20 (S1.201) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 08 Oktober 2018, 10:00-12:00 (S1.303) <br />																					&nbsp;&nbsp;&nbsp; 08 Oktober 2018, 10:00-12:00 (S1.304) <br />																					&nbsp;&nbsp;&nbsp; 08 Oktober 2018, 10:00-12:00 (S1.307) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 17 Desember 2018, 10:00-12:00 (S1.303) <br />																					&nbsp;&nbsp;&nbsp; 17 Desember 2018, 10:00-12:00 (S1.304) <br />																					&nbsp;&nbsp;&nbsp; 17 Desember 2018, 10:00-12:00 (S1.307) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">2</td>
+								<td>
+																	</td>
+								<td>
+									MKK1101 KIMIA DASAR I <br />
+									<em>(KELAS 6)</em> <br />
+
+																		<em>code: ecc7-7b64-e2da-d78f</em>
+									</td>
+								<td class="text-center">3</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Senin, 12:30-15:00 (S1.201) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 02 Oktober 2018, 10:00-12:00 (S1.103) <br />																					&nbsp;&nbsp;&nbsp; 02 Oktober 2018, 10:00-12:00 (S1.104) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 11 Desember 2018, 10:00-12:00 (S1.103) <br />																					&nbsp;&nbsp;&nbsp; 11 Desember 2018, 10:00-12:00 (S1.104) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">3</td>
+								<td>
+																	</td>
+								<td>
+									MMM1101 KALKULUS I <br />
+									<em>(KELAS KAL 6)</em> <br />
+
+																		<em>code: 6a55-6288-2b77-2394</em>
+									</td>
+								<td class="text-center">3</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Senin, 09:30-10:20 (S1.201) <br />																					&nbsp;&nbsp;&nbsp; Selasa, 07:30-09:10 (S1.201) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 04 Oktober 2018, 10:00-12:00 (S1.201) <br />																					&nbsp;&nbsp;&nbsp; 04 Oktober 2018, 10:00-12:00 (S1.202) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 13 Desember 2018, 10:00-12:00 (S1.201) <br />																					&nbsp;&nbsp;&nbsp; 13 Desember 2018, 10:00-12:00 (S1.202) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">4</td>
+								<td>
+																	</td>
+								<td>
+									MII1203 LOGIKA INFORMATIKA <br />
+									<em>(KELAS ILKOM-B-MII1203)</em> <br />
+
+																		<em>code: 72d5-dbe8-db26-3125</em>
+									</td>
+								<td class="text-center">2</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Senin, 10:30-12:10 (S1.204) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 05 Oktober 2018, 07:30-09:30 (S1.105) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 14 Desember 2018, 07:30-09:30 (S1.105) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">5</td>
+								<td>
+																	</td>
+								<td>
+									MII1205 PENGANTAR ILMU KOMPUTER <br />
+									<em>(KELAS ILKOM-B-MII1205)</em> <br />
+
+																		<em>code: a968-00f6-df34-5bcd</em>
+									</td>
+								<td class="text-center">3</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Rabu, 14:30-17:00 (S1.202) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 11 Oktober 2018, 13:00-15:00 (S1.204) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 20 Desember 2018, 13:00-15:00 (S1.204) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">6</td>
+								<td>
+																	</td>
+								<td>
+									MII1202 PRAK. PEMROGRAMAN I <br />
+									<em>(KELAS ILKOM-A4-MII1202)</em> <br />
+
+																		<em>code: 36fb-83a6-d9a6-dd17</em>
+									</td>
+								<td class="text-center">1</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Rabu, 12:30-14:10 (LAB.KOM 1) <br />																			
+									UTS: <br />
+																			<br />
+									
+									UAS: <br />
+																			<br />
+																	</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">7</td>
+								<td>
+																	</td>
+								<td>
+									MII1201 PEMROGRAMAN I <br />
+									<em>(KELAS PRG-6-MII1201)</em> <br />
+
+																		<em>code: 5d41-fa0f-b504-d729</em>
+									</td>
+								<td class="text-center">3</td>
+								<td>
+									Kuliah: <br />
+																				&nbsp;&nbsp;&nbsp; Rabu, 07:30-10:00 (S1.201) <br />																			
+									UTS: <br />
+																				&nbsp;&nbsp;&nbsp; 10 Oktober 2018, 10:00-12:00 (S1.301) <br />																					&nbsp;&nbsp;&nbsp; 10 Oktober 2018, 10:00-12:00 (S1.302) <br />																					&nbsp;&nbsp;&nbsp; 10 Oktober 2018, 10:00-12:00 (S1.206) <br />																			
+									UAS: <br />
+																				&nbsp;&nbsp;&nbsp; 19 Desember 2018, 10:00-12:00 (S1.301) <br />																					&nbsp;&nbsp;&nbsp; 19 Desember 2018, 10:00-12:00 (S1.302) <br />																					&nbsp;&nbsp;&nbsp; 19 Desember 2018, 10:00-12:00 (S1.206) <br />																											</td>
+
+														</tr>
+													<tr>
+								<td>
+																		<span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
+																	</td>
+								<td class="text-right">8</td>
+								<td>
+																	</td>
+								<td>
+									UNU1002 AGAMA KRISTEN <br />
+									<em>(KELAS ILKOM-ELINS)</em> <br />
+
+																		<em>code: f159-9b61-77e0-4dfb</em>
+									</td>
+								<td class="text-center">2</td>
+								<td>
+									Kuliah: <br />
+																			<br />
+									
+									UTS: <br />
+																			<br />
+									
+									UAS: <br />
+																			<br />
+																	</td>
+
+														</tr>
+												</tbody>
+						<tfoot>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>
+																		</td>
+								<th class="text-center">20/20</th>
+								<td>&nbsp;</td>
+							</tr>
+						</tfoot>
+											</table>
+				</div>
+			</fieldset>
+		</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-xs-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>Ringkasan</strong></div>
+			<div class="panel-body">
+				Indeks Prestasi acuan <strong class="pull-right"></strong><br />
+				Maksimal sks bisa diambil <strong class="pull-right">20</strong><br />
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-xs-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>Catatan</strong></div>
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row visible-print">
+	<div class="col-xs-5">
+		<span class="text-center">
+			<br />
+			Dosen Pembimbing Akademik<br />
+			<br />
+			<br />
+			<br />
+			MOH. EDI WIBOWO, PH.D.		</span>
+	</div>
+	<div class="col-xs-2">
+		&nbsp;
+	</div>
+	<div class="col-xs-5">
+		<span class="text-center">
+			Yogyakarta, 24 Januari 2019 04:11:23<br />
+			Mahasiswa<br />
+			<br />
+			<br />
+			<br />
+			STANLEY HERYANTO		</span>
+	</div>
+</div>          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="fill"></div>
+      <div class="container1">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center">
+              Copyright &copy; Universitas Gadjah Mada 2019 <br />
+              Jln. Pancasila (Boulevard), Bulaksumur, Yogyakarta 55281 | Phone: (0274) 649 2116, Fax: (0274) 552132 <br />
+              Credit Sites | Copyright | Legal <br />
+              "server-158" <br />
+              <span class="visible-print">-= 2019-01-24 04:11:23 =-</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- #footer -->
+
+<script type="text/javascript">
+$(function () {
+    $('.checkall').on('click', function () {
+        $(this).closest('fieldset').find(':checkbox').prop('checked', this.checked);
+    });
+});
+</script>
+
+  </body>
+</html>
