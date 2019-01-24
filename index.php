@@ -19,9 +19,56 @@
      * Mau pake DOM Parser tapi dari palawa gk ada id semua tag nya :(
      */
     function ParseSource($source){
-        
+        //pangkas atas bawah yg gk perlu
         $source = substr($source, strpos($source, 'NIM'));
-        echo $source;
+        $source = substr($source, 0, strpos($source, 'Ringkasan'));
+        
+        $profil = substr($source, 0, strpos($source, 'SEMESTER'));
+        $jadwal = substr($source, strpos($source, 'fieldset'));
+
+        $profil = explode('">', $profil);
+        $nim = substr($profil[1], 0, strpos($profil[1], '<'));
+        $prodi = substr($profil[4], 0, strpos($profil[4], '<'));
+        $nama = substr($profil[6], 0, strpos($profil[6], '<'));
+        
+        $jadwal = preg_split('/<\/td>[\n\s]*<td>[\n\s]*<\/td>[\n\s]*<td>/', $jadwal);
+        $amount = sizeof($jadwal) - 1;
+        
+        $matkul = array();
+
+        for ($i=0; $i < $amount; $i++) {
+            $piece = $jadwal[$i+1]; 
+            $namaMatkul = substr($piece, 0, strpos($piece, '<'));
+            //buang kode matkul
+            $namaMatkul = substr(strstr($namaMatkul, ' '), 1);
+
+            $piece = strstr($piece, 'Kuliah');
+            $waktu = substr($piece, 0, strpos($piece, 'UTS'));
+            $waktu = explode('sp; ', $waktu);
+
+            $WaktuList = array();
+            //ekstra kuli maks
+            for ($j=1; $j < sizeof($waktu); $j++) {
+                $waktu[$j] = substr($waktu[$j], 0, strpos($waktu[$j], ' <'));
+                $hari = substr($waktu[$j], 0, strpos($waktu[$j], ','));
+                $jam = substr($waktu[$j], strpos($waktu[$j], ',') + 2, 11);
+                $ruang = strstr($waktu[$j], '(');
+                $ruang = substr($ruang, 1, strpos($ruang, ')') - 1);
+                $WaktuList[$j] = array([
+                    'hari' => $hari,
+                    'jam' => $jam,
+                    'ruang' => $ruang
+                ]);
+            }
+
+            $matkul[$i] = [
+                'nama' => $namaMatkul,
+                'waktu' => $WaktuList
+            ];
+
+            echo htmlspecialchars($namaMatkul) . '<br>';
+            var_dump($WaktuList);
+        }
     }
 
     /**
