@@ -10,8 +10,9 @@
             echo 'Page source tidak boleh kosong.';
         }else{
             $data = ParseSource($source);
-            //InsertToDatabase($data);
+            InsertToDatabase($data);
             echo '<table border="1">';
+            echo '<caption>Jadwal Kuliah</caption>';
             echo '<tr>';
             echo '<th colspan="2" style="text-align:center;">' . $data['nama'] . '<br>' . $data['nim'] . '<br>' . $data['prodi'] . '</th>';
             echo '</tr>';
@@ -24,11 +25,10 @@
                 echo '<tr>';
                 echo '<td>Senin</td>';
                 echo '<td>';
-                echo '<br>';
                 foreach ($data['matkul'] as $matkul) {
                     foreach ($matkul['waktu'] as $waktu) {
                         if($waktu['hari'] == 'Senin'){
-                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                            echo $matkul['nama'] . ' &nbsp;' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br>';
                         }
                     }
                 }
@@ -39,11 +39,10 @@
                 echo '<tr>';
                 echo '<td>Selasa</td>';
                 echo '<td>';
-                echo '<br>';
                 foreach ($data['matkul'] as $matkul) {
                     foreach ($matkul['waktu'] as $waktu) {
                         if($waktu['hari'] == 'Selasa'){
-                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                            echo $matkul['nama'] . ' &nbsp;' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br>';
                         }
                     }
                 }
@@ -54,11 +53,10 @@
                 echo '<tr>';
                 echo '<td>Rabu</td>';
                 echo '<td>';
-                echo '<br>';
                 foreach ($data['matkul'] as $matkul) {
                     foreach ($matkul['waktu'] as $waktu) {
                         if($waktu['hari'] == 'Rabu'){
-                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                            echo $matkul['nama'] . ' &nbsp;' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br>';
                         }
                     }
                 }
@@ -69,11 +67,10 @@
                 echo '<tr>';
                 echo '<td>Kamis</td>';
                 echo '<td>';
-                echo '<br>';
                 foreach ($data['matkul'] as $matkul) {
                     foreach ($matkul['waktu'] as $waktu) {
                         if($waktu['hari'] == 'Kamis'){
-                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                            echo $matkul['nama'] . ' &nbsp;' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br>';
                         }
                     }
                 }
@@ -84,11 +81,10 @@
                 echo '<tr>';
                 echo '<td>Jumat</td>';
                 echo '<td>';
-                echo '<br>';
                 foreach ($data['matkul'] as $matkul) {
                     foreach ($matkul['waktu'] as $waktu) {
                         if($waktu['hari'] == 'Jumat'){
-                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                            echo $matkul['nama'] . ' &nbsp;' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br>';
                         }
                     }
                 }
@@ -166,15 +162,14 @@
      */
     function InsertToDatabase($data){
         $servername = "localhost";
-        $username = "renziera_tilepelisa";
-        $password = "5%pQhnDs@g8O#Zen";
-        $database = "renziera_tilepelisa";
+        $username = "renziera_jadwalizer";
+        $password = 'n4^$A#P94ca&^T59';
+        $database = "renziera_jadwalizer";
 
         try{
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-            echo "Koneksi database sukses<br>";
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
 
         }
@@ -192,7 +187,15 @@
 
 <!DOCTYPE html>
      <html>
+     <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    </style>
      <body>
+         <br>
+         <br>
+         <br>
          <form action="" method="post" name="asdf" id="asdf">
              <textarea name="source" id="asdf" cols="30" rows="10"  style="overflow:auto;resize:none" 
                 form="asdf" placeholder="Paste page source dari Palawa di sini"></textarea>
