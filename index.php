@@ -7,9 +7,95 @@
         $source = $_POST['source'];
 
         if(empty($source)){
-            $message = 'Page source tidak boleh kosong.';
+            echo 'Page source tidak boleh kosong.';
         }else{
-            ParseSource($source);
+            $data = ParseSource($source);
+            //InsertToDatabase($data);
+            echo '<table border="1">';
+            echo '<tr>';
+            echo '<th colspan="2" style="text-align:center;">' . $data['nama'] . '<br>' . $data['nim'] . '<br>' . $data['prodi'] . '</th>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<th style="text-align:center;">Hari</th>';
+            echo '<th style="text-align:center;">Mata Kuliah</th>';
+            echo '</tr>';
+            $datastring = serialize($data['matkul']);
+            if(strpos($datastring, 'Senin') !== false){
+                echo '<tr>';
+                echo '<td>Senin</td>';
+                echo '<td>';
+                echo '<br>';
+                foreach ($data['matkul'] as $matkul) {
+                    foreach ($matkul['waktu'] as $waktu) {
+                        if($waktu['hari'] == 'Senin'){
+                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                        }
+                    }
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            if(strpos($datastring, 'Selasa') !== false){
+                echo '<tr>';
+                echo '<td>Selasa</td>';
+                echo '<td>';
+                echo '<br>';
+                foreach ($data['matkul'] as $matkul) {
+                    foreach ($matkul['waktu'] as $waktu) {
+                        if($waktu['hari'] == 'Selasa'){
+                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                        }
+                    }
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            if(strpos($datastring, 'Rabu') !== false){
+                echo '<tr>';
+                echo '<td>Rabu</td>';
+                echo '<td>';
+                echo '<br>';
+                foreach ($data['matkul'] as $matkul) {
+                    foreach ($matkul['waktu'] as $waktu) {
+                        if($waktu['hari'] == 'Rabu'){
+                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                        }
+                    }
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            if(strpos($datastring, 'Kamis') !== false){
+                echo '<tr>';
+                echo '<td>Kamis</td>';
+                echo '<td>';
+                echo '<br>';
+                foreach ($data['matkul'] as $matkul) {
+                    foreach ($matkul['waktu'] as $waktu) {
+                        if($waktu['hari'] == 'Kamis'){
+                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                        }
+                    }
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            if(strpos($datastring, 'Jumat') !== false){
+                echo '<tr>';
+                echo '<td>Jumat</td>';
+                echo '<td>';
+                echo '<br>';
+                foreach ($data['matkul'] as $matkul) {
+                    foreach ($matkul['waktu'] as $waktu) {
+                        if($waktu['hari'] == 'Jumat'){
+                            echo $matkul['nama'] . '<br>' . $waktu['jam'] . ' | ' . $waktu['ruang'] . '<br><br>';
+                        }
+                    }
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
         }
     }
 
@@ -38,7 +124,7 @@
 
         for ($i=0; $i < $amount; $i++) {
             $piece = $jadwal[$i+1]; 
-            $namaMatkul = substr($piece, 0, strpos($piece, '<'));
+            $namaMatkul = substr($piece, 0, strpos($piece, ' <'));
             //buang kode matkul
             $namaMatkul = substr(strstr($namaMatkul, ' '), 1);
 
@@ -54,21 +140,25 @@
                 $jam = substr($waktu[$j], strpos($waktu[$j], ',') + 2, 11);
                 $ruang = strstr($waktu[$j], '(');
                 $ruang = substr($ruang, 1, strpos($ruang, ')') - 1);
-                $WaktuList[$j] = array([
+                $WaktuList[$j] = array(
                     'hari' => $hari,
                     'jam' => $jam,
                     'ruang' => $ruang
-                ]);
+                );
             }
 
             $matkul[$i] = [
                 'nama' => $namaMatkul,
                 'waktu' => $WaktuList
             ];
-
-            echo htmlspecialchars($namaMatkul) . '<br>';
-            var_dump($WaktuList);
         }
+
+        return array(
+            'nama' => $nama,
+            'nim' => $nim,
+            'prodi' => $prodi,
+            'matkul' => $matkul
+        );
     }
 
     /**
@@ -89,11 +179,12 @@
 
         }
 
-        $insertSQL = "INSERT INTO tilepanku (nama_file, indeks_elisa, tanggal) VALUES (:nama_file, :index_elisa, :tanggal)";
+        $insertSQL = "INSERT INTO jadwalizer (nama, nim, prodi, jadwal) VALUES (:nama, :nim, :prodi, :jadwal)";
 		$query = $conn->prepare($insertSQL);
-        $query->bindParam(':nama_file', $nama_file );
-        $query->bindParam(':index_elisa', $indeks );
-        $query->bindParam(':tanggal', $tanggal );
+        $query->bindParam(':nama', $data['nama'] );
+        $query->bindParam(':nim', $data['nim'] );
+        $query->bindParam(':prodi', $data['prodi']);
+        $query->bindParam(':jadwal', json_encode($data['matkul']));
 		$query->execute();
     }
      
